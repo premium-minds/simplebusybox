@@ -1,0 +1,14 @@
+June 19, 2016.
+
+The goal here is to make a simple and free build of BusyBox for Android
+that does not require root.  It will package the binaries within the
+app-lib directory, so that all you have to do is add it to $PATH.
+
+It seems popular to add dropbear ssh client to packages such as this one,
+but to me that seems like a slippery slope...why add that and not rsync,
+for example?  I intend to limit to just busybox.
+
+
+XXX - make busybox build under JNI
+XXX - make UI that just says "paste export PATH=$PATH:/data/app/blah/lib" or whatever
+XXX - figure out how to add things that don't end in .so to the ant build (probably need a custom rule of some sort)
