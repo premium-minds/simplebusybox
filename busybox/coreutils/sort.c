@@ -106,8 +106,8 @@ static struct sort_key {
 
 static char *get_key(char *str, struct sort_key *key, int flags)
 {
-	int start = start; /* for compiler */
-	int end;
+	int start = 0;
+	int end = 0;
 	int len, j;
 	unsigned i;
 
