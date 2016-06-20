@@ -352,7 +352,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/networking/nbd-client.c \
 	$(BUSYBOX_PATH)/networking/arp.c \
 	$(BUSYBOX_PATH)/networking/dnsd.c \
-	$(BUSYBOX_PATH)/networking/telnetd.c \
 	$(BUSYBOX_PATH)/networking/ifconfig.c \
 	$(BUSYBOX_PATH)/networking/ifupdown.c \
 	$(BUSYBOX_PATH)/networking/httpd_ssi.c \
