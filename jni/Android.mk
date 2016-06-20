@@ -467,8 +467,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/networking/httpd_indexcgi.c \
 	$(BUSYBOX_PATH)/networking/brctl.c \
 	$(BUSYBOX_PATH)/networking/wget.c \
-	$(BUSYBOX_PATH)/printutils/lpd.c \
-	$(BUSYBOX_PATH)/printutils/lpr.c \
 	$(BUSYBOX_PATH)/procps/pmap.c \
 	$(BUSYBOX_PATH)/procps/fuser.c \
 	$(BUSYBOX_PATH)/procps/mpstat.c \
