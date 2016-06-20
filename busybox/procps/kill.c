@@ -159,7 +159,11 @@ int kill_main(int argc UNUSED_PARAM, char **argv)
 		int ret = 2;
 
 		/* Find out our session id */
+#if 0 /* MISSING FROM BIONIC */
 		sid = getsid(pid);
+#else
+		sid = (pid_t)-1;
+#endif
 		/* Stop all processes */
 		if (signo != SIGSTOP && signo != SIGCONT)
 			kill(-1, SIGSTOP);
