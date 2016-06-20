@@ -53,10 +53,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/archival/libarchive/get_header_tar_xz.c \
 	$(BUSYBOX_PATH)/archival/libarchive/get_header_cpio.c \
 	$(BUSYBOX_PATH)/archival/libarchive/get_header_tar_bz2.c \
-	$(BUSYBOX_PATH)/archival/libarchive/bz/huffman.c \
-	$(BUSYBOX_PATH)/archival/libarchive/bz/blocksort.c \
-	$(BUSYBOX_PATH)/archival/libarchive/bz/compress.c \
-	$(BUSYBOX_PATH)/archival/libarchive/bz/bzlib.c \
 	$(BUSYBOX_PATH)/archival/tar.c \
 	$(BUSYBOX_PATH)/console-tools/openvt.c \
 	$(BUSYBOX_PATH)/console-tools/loadfont.c \
@@ -151,7 +147,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/coreutils/cp.c \
 	$(BUSYBOX_PATH)/coreutils/uudecode.c \
 	$(BUSYBOX_PATH)/coreutils/pwd.c \
-	$(BUSYBOX_PATH)/coreutils/od_bloaty.c \
 	$(BUSYBOX_PATH)/debianutils/start_stop_daemon.c \
 	$(BUSYBOX_PATH)/debianutils/which.c \
 	$(BUSYBOX_PATH)/debianutils/mktemp.c \
@@ -188,7 +183,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/parse_mode.c \
 	$(BUSYBOX_PATH)/libbb/safe_poll.c \
 	$(BUSYBOX_PATH)/libbb/inet_cksum.c \
-	$(BUSYBOX_PATH)/libbb/pw_encrypt_des.c \
 	$(BUSYBOX_PATH)/libbb/printable_string.c \
 	$(BUSYBOX_PATH)/libbb/get_line_from_file.c \
 	$(BUSYBOX_PATH)/libbb/makedev.c \
@@ -205,7 +199,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/find_mount_point.c \
 	$(BUSYBOX_PATH)/libbb/platform.c \
 	$(BUSYBOX_PATH)/libbb/utmp.c \
-	$(BUSYBOX_PATH)/libbb/xatonum.c \
 	$(BUSYBOX_PATH)/libbb/read_printf.c \
 	$(BUSYBOX_PATH)/libbb/percent_decode.c \
 	$(BUSYBOX_PATH)/libbb/single_argv.c \
@@ -231,7 +224,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/full_write.c \
 	$(BUSYBOX_PATH)/libbb/time.c \
 	$(BUSYBOX_PATH)/libbb/hash_md5_sha.c \
-	$(BUSYBOX_PATH)/libbb/pw_encrypt_md5.c \
 	$(BUSYBOX_PATH)/libbb/get_console.c \
 	$(BUSYBOX_PATH)/libbb/get_last_path_component.c \
 	$(BUSYBOX_PATH)/libbb/bb_strtonum.c \
@@ -258,7 +250,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/rtc.c \
 	$(BUSYBOX_PATH)/libbb/mtab.c \
 	$(BUSYBOX_PATH)/libbb/change_identity.c \
-	$(BUSYBOX_PATH)/libbb/pw_encrypt_sha.c \
 	$(BUSYBOX_PATH)/libbb/perror_msg.c \
 	$(BUSYBOX_PATH)/libbb/warn_ignoring_args.c \
 	$(BUSYBOX_PATH)/libbb/get_volsize.c \
@@ -513,7 +504,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/util-linux/lsusb.c \
 	$(BUSYBOX_PATH)/util-linux/mkfs_reiser.c \
 	$(BUSYBOX_PATH)/util-linux/fbset.c \
-	$(BUSYBOX_PATH)/util-linux/fdisk_osf.c \
 	$(BUSYBOX_PATH)/util-linux/lspci.c \
 	$(BUSYBOX_PATH)/util-linux/rev.c \
 	$(BUSYBOX_PATH)/util-linux/script.c \
@@ -523,13 +513,9 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/util-linux/ipcs.c \
 	$(BUSYBOX_PATH)/util-linux/fstrim.c \
 	$(BUSYBOX_PATH)/util-linux/flock.c \
-	$(BUSYBOX_PATH)/util-linux/fdisk_gpt.c \
-	$(BUSYBOX_PATH)/util-linux/fdisk_aix.c \
 	$(BUSYBOX_PATH)/util-linux/fdisk.c \
-	$(BUSYBOX_PATH)/util-linux/fdisk_sgi.c \
 	$(BUSYBOX_PATH)/util-linux/mkfs_vfat.c \
 	$(BUSYBOX_PATH)/util-linux/ipcrm.c \
-	$(BUSYBOX_PATH)/util-linux/fdisk_sun.c \
 	$(BUSYBOX_PATH)/util-linux/hwclock.c \
 	$(BUSYBOX_PATH)/util-linux/mdev.c \
 	$(BUSYBOX_PATH)/util-linux/pivot_root.c \
