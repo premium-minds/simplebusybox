@@ -151,9 +151,7 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/e2fsprogs/lsattr.c \
 	$(BUSYBOX_PATH)/e2fsprogs/e2fs_lib.c \
 	$(BUSYBOX_PATH)/editors/vi.c \
-	$(BUSYBOX_PATH)/editors/patch_bbox.c \
 	$(BUSYBOX_PATH)/editors/cmp.c \
-	$(BUSYBOX_PATH)/editors/patch_toybox.c \
 	$(BUSYBOX_PATH)/editors/ed.c \
 	$(BUSYBOX_PATH)/editors/patch.c \
 	$(BUSYBOX_PATH)/editors/sed.c \
@@ -354,7 +352,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/networking/dnsd.c \
 	$(BUSYBOX_PATH)/networking/ifconfig.c \
 	$(BUSYBOX_PATH)/networking/ifupdown.c \
-	$(BUSYBOX_PATH)/networking/httpd_ssi.c \
 	$(BUSYBOX_PATH)/networking/isrv.c \
 	$(BUSYBOX_PATH)/networking/ipcalc.c \
 	$(BUSYBOX_PATH)/networking/traceroute.c \
@@ -404,26 +401,19 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/shell/match.c \
 	$(BUSYBOX_PATH)/util-linux/blockdev.c \
 	$(BUSYBOX_PATH)/util-linux/uevent.c \
-	$(BUSYBOX_PATH)/util-linux/umount.c \
 	$(BUSYBOX_PATH)/util-linux/lsusb.c \
 	$(BUSYBOX_PATH)/util-linux/fbset.c \
 	$(BUSYBOX_PATH)/util-linux/lspci.c \
 	$(BUSYBOX_PATH)/util-linux/rev.c \
 	$(BUSYBOX_PATH)/util-linux/script.c \
-	$(BUSYBOX_PATH)/util-linux/rdate.c \
 	$(BUSYBOX_PATH)/util-linux/getopt.c \
-	$(BUSYBOX_PATH)/util-linux/swaponoff.c \
-	$(BUSYBOX_PATH)/util-linux/ipcs.c \
 	$(BUSYBOX_PATH)/util-linux/fstrim.c \
 	$(BUSYBOX_PATH)/util-linux/flock.c \
 	$(BUSYBOX_PATH)/util-linux/fdisk.c \
-	$(BUSYBOX_PATH)/util-linux/ipcrm.c \
 	$(BUSYBOX_PATH)/util-linux/hwclock.c \
-	$(BUSYBOX_PATH)/util-linux/mdev.c \
 	$(BUSYBOX_PATH)/util-linux/pivot_root.c \
 	$(BUSYBOX_PATH)/util-linux/blkid.c \
 	$(BUSYBOX_PATH)/util-linux/losetup.c \
-	$(BUSYBOX_PATH)/util-linux/setarch.c \
 	$(BUSYBOX_PATH)/util-linux/hexdump.c \
 	$(BUSYBOX_PATH)/util-linux/findfs.c \
 	$(BUSYBOX_PATH)/util-linux/rtcwake.c \
@@ -435,40 +425,26 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/util-linux/mkswap.c \
 	$(BUSYBOX_PATH)/util-linux/fdformat.c \
 	$(BUSYBOX_PATH)/util-linux/scriptreplay.c \
-	$(BUSYBOX_PATH)/util-linux/mount.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/romfs.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_nvidia_raid.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/ntfs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/btrfs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/fat.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_lvm.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/iso9660.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/luks.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/nilfs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/xfs.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_highpoint.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_mac.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/sysv.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_silicon_raid.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/exfat.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/hfs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/reiserfs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/jfs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/linux_swap.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_lsi_raid.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_hpfs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/ext.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_isw_raid.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_msdos.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_promise_raid.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/ocfs2.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/cramfs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/udf.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/squashfs.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_minix.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/volume_id.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_via_raid.c \
-	$(BUSYBOX_PATH)/util-linux/volume_id/unused_ufs.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/util.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/get_devname.c \
 	$(BUSYBOX_PATH)/util-linux/volume_id/linux_raid.c \
