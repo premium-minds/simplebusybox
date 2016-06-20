@@ -1007,7 +1007,7 @@ inflate_unzip_internal(STATE_PARAM transformer_state_t *xstate)
 	error_msg = "corrupted data";
 	if (setjmp(error_jmp)) {
 		/* Error from deep inside zip machinery */
-		bb_error_msg(error_msg);
+		bb_error_msg("%s", error_msg);
 		n = -1;
 		goto ret;
 	}
@@ -1080,7 +1080,7 @@ static int top_up(STATE_PARAM unsigned n)
 		bytebuffer_offset = 0;
 		bytebuffer_size = full_read(gunzip_src_fd, &bytebuffer[count], bytebuffer_max - count);
 		if ((int)bytebuffer_size < 0) {
-			bb_error_msg(bb_msg_read_error);
+			bb_error_msg("%s", bb_msg_read_error);
 			return 0;
 		}
 		bytebuffer_size += count;

@@ -21,6 +21,11 @@ generates the auto-generated .h files, and then I run:
 
 So that's where those files came from...
 
+...
+
+Switched to using android-ndk-r10d instead of android-ndk-r8 because even
+at android-8 (froyo) it has a few more functions...
+
 
 XXX - make busybox build under JNI
 XXX - figure out how to add things that don't end in .so to the ant build (probably need a custom rule of some sort)
