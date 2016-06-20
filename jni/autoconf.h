@@ -2,7 +2,7 @@
  * Automatically generated C config: don't edit
  * Busybox version: 1.24.2
  */
-#define AUTOCONF_TIMESTAMP "2016-06-20 00:46:18 EDT"
+#define AUTOCONF_TIMESTAMP "2016-06-20 08:20:39 EDT"
 
 #define CONFIG_HAVE_DOT_CONFIG 1
 #define ENABLE_HAVE_DOT_CONFIG 1
@@ -6020,22 +6020,14 @@
 #define ENABLE_FEATURE_KMSG_SYSLOG 0
 #define IF_FEATURE_KMSG_SYSLOG(...)
 #define IF_NOT_FEATURE_KMSG_SYSLOG(...) __VA_ARGS__
-#define CONFIG_KLOGD 1
-#define ENABLE_KLOGD 1
-#ifdef MAKE_SUID
-# define IF_KLOGD(...) __VA_ARGS__ "CONFIG_KLOGD"
-#else
-# define IF_KLOGD(...) __VA_ARGS__
-#endif
-#define IF_NOT_KLOGD(...)
-#define CONFIG_FEATURE_KLOGD_KLOGCTL 1
-#define ENABLE_FEATURE_KLOGD_KLOGCTL 1
-#ifdef MAKE_SUID
-# define IF_FEATURE_KLOGD_KLOGCTL(...) __VA_ARGS__ "CONFIG_FEATURE_KLOGD_KLOGCTL"
-#else
-# define IF_FEATURE_KLOGD_KLOGCTL(...) __VA_ARGS__
-#endif
-#define IF_NOT_FEATURE_KLOGD_KLOGCTL(...)
+#undef CONFIG_KLOGD
+#define ENABLE_KLOGD 0
+#define IF_KLOGD(...)
+#define IF_NOT_KLOGD(...) __VA_ARGS__
+#undef CONFIG_FEATURE_KLOGD_KLOGCTL
+#define ENABLE_FEATURE_KLOGD_KLOGCTL 0
+#define IF_FEATURE_KLOGD_KLOGCTL(...)
+#define IF_NOT_FEATURE_KLOGD_KLOGCTL(...) __VA_ARGS__
 #undef CONFIG_LOGGER
 #define ENABLE_LOGGER 0
 #define IF_LOGGER(...)
