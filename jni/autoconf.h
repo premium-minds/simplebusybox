@@ -2,7 +2,7 @@
  * Automatically generated C config: don't edit
  * Busybox version: 1.24.2
  */
-#define AUTOCONF_TIMESTAMP "2016-06-19 21:49:26 EDT"
+#define AUTOCONF_TIMESTAMP "2016-06-19 22:59:29 EDT"
 
 #define CONFIG_HAVE_DOT_CONFIG 1
 #define ENABLE_HAVE_DOT_CONFIG 1
@@ -1280,14 +1280,10 @@
 # define IF_FOLD(...) __VA_ARGS__
 #endif
 #define IF_NOT_FOLD(...)
-#define CONFIG_FSYNC 1
-#define ENABLE_FSYNC 1
-#ifdef MAKE_SUID
-# define IF_FSYNC(...) __VA_ARGS__ "CONFIG_FSYNC"
-#else
-# define IF_FSYNC(...) __VA_ARGS__
-#endif
-#define IF_NOT_FSYNC(...)
+#undef CONFIG_FSYNC
+#define ENABLE_FSYNC 0
+#define IF_FSYNC(...)
+#define IF_NOT_FSYNC(...) __VA_ARGS__
 #define CONFIG_HEAD 1
 #define ENABLE_HEAD 1
 #ifdef MAKE_SUID

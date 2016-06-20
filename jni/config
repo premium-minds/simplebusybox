@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Busybox version: 1.24.2
-# Sun Jun 19 21:49:26 2016
+# Sun Jun 19 22:59:29 2016
 #
 CONFIG_HAVE_DOT_CONFIG=y
 
@@ -237,7 +237,7 @@ CONFIG_EXPR=y
 CONFIG_EXPR_MATH_SUPPORT_64=y
 CONFIG_FALSE=y
 CONFIG_FOLD=y
-CONFIG_FSYNC=y
+# CONFIG_FSYNC is not set
 CONFIG_HEAD=y
 CONFIG_FEATURE_FANCY_HEAD=y
 CONFIG_INSTALL=y
