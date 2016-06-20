@@ -2,7 +2,7 @@
  * Automatically generated C config: don't edit
  * Busybox version: 1.24.2
  */
-#define AUTOCONF_TIMESTAMP "2016-06-19 22:59:29 EDT"
+#define AUTOCONF_TIMESTAMP "2016-06-19 23:59:55 EDT"
 
 #define CONFIG_HAVE_DOT_CONFIG 1
 #define ENABLE_HAVE_DOT_CONFIG 1
@@ -3744,38 +3744,22 @@
 # define IF_FEATURE_CROND_DIR(...) __VA_ARGS__
 #endif
 #define IF_NOT_FEATURE_CROND_DIR(...)
-#define CONFIG_I2CGET 1
-#define ENABLE_I2CGET 1
-#ifdef MAKE_SUID
-# define IF_I2CGET(...) __VA_ARGS__ "CONFIG_I2CGET"
-#else
-# define IF_I2CGET(...) __VA_ARGS__
-#endif
-#define IF_NOT_I2CGET(...)
-#define CONFIG_I2CSET 1
-#define ENABLE_I2CSET 1
-#ifdef MAKE_SUID
-# define IF_I2CSET(...) __VA_ARGS__ "CONFIG_I2CSET"
-#else
-# define IF_I2CSET(...) __VA_ARGS__
-#endif
-#define IF_NOT_I2CSET(...)
-#define CONFIG_I2CDUMP 1
-#define ENABLE_I2CDUMP 1
-#ifdef MAKE_SUID
-# define IF_I2CDUMP(...) __VA_ARGS__ "CONFIG_I2CDUMP"
-#else
-# define IF_I2CDUMP(...) __VA_ARGS__
-#endif
-#define IF_NOT_I2CDUMP(...)
-#define CONFIG_I2CDETECT 1
-#define ENABLE_I2CDETECT 1
-#ifdef MAKE_SUID
-# define IF_I2CDETECT(...) __VA_ARGS__ "CONFIG_I2CDETECT"
-#else
-# define IF_I2CDETECT(...) __VA_ARGS__
-#endif
-#define IF_NOT_I2CDETECT(...)
+#undef CONFIG_I2CGET
+#define ENABLE_I2CGET 0
+#define IF_I2CGET(...)
+#define IF_NOT_I2CGET(...) __VA_ARGS__
+#undef CONFIG_I2CSET
+#define ENABLE_I2CSET 0
+#define IF_I2CSET(...)
+#define IF_NOT_I2CSET(...) __VA_ARGS__
+#undef CONFIG_I2CDUMP
+#define ENABLE_I2CDUMP 0
+#define IF_I2CDUMP(...)
+#define IF_NOT_I2CDUMP(...) __VA_ARGS__
+#undef CONFIG_I2CDETECT
+#define ENABLE_I2CDETECT 0
+#define IF_I2CDETECT(...)
+#define IF_NOT_I2CDETECT(...) __VA_ARGS__
 #define CONFIG_LESS 1
 #define ENABLE_LESS 1
 #ifdef MAKE_SUID
