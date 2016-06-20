@@ -55,14 +55,12 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/archival/libarchive/get_header_tar_bz2.c \
 	$(BUSYBOX_PATH)/archival/tar.c \
 	$(BUSYBOX_PATH)/console-tools/openvt.c \
-	$(BUSYBOX_PATH)/console-tools/loadfont.c \
 	$(BUSYBOX_PATH)/console-tools/loadkmap.c \
 	$(BUSYBOX_PATH)/console-tools/setlogcons.c \
 	$(BUSYBOX_PATH)/console-tools/resize.c \
 	$(BUSYBOX_PATH)/console-tools/fgconsole.c \
 	$(BUSYBOX_PATH)/console-tools/deallocvt.c \
 	$(BUSYBOX_PATH)/console-tools/chvt.c \
-	$(BUSYBOX_PATH)/console-tools/kbd_mode.c \
 	$(BUSYBOX_PATH)/console-tools/reset.c \
 	$(BUSYBOX_PATH)/console-tools/dumpkmap.c \
 	$(BUSYBOX_PATH)/console-tools/setkeycodes.c \
@@ -82,7 +80,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/coreutils/mkdir.c \
 	$(BUSYBOX_PATH)/coreutils/tail.c \
 	$(BUSYBOX_PATH)/coreutils/readlink.c \
-	$(BUSYBOX_PATH)/coreutils/who.c \
 	$(BUSYBOX_PATH)/coreutils/install.c \
 	$(BUSYBOX_PATH)/coreutils/tr.c \
 	$(BUSYBOX_PATH)/coreutils/expr.c \
