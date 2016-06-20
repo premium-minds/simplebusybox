@@ -34,10 +34,10 @@ static void writeheader(const char *path, struct stat *sb, int type)
 
 	memset(&header, 0, TAR_BLOCK_SIZE);
 	strcpy(header.name, path);
-	sprintf(header.mode, "%o", sb->st_mode & 0777);
+	sprintf(header.mode, "%o", (unsigned) sb->st_mode & 0777);
 	/* careful to not overflow fields! */
-	sprintf(header.uid, "%o", sb->st_uid & 07777777);
-	sprintf(header.gid, "%o", sb->st_gid & 07777777);
+	sprintf(header.uid, "%o", (unsigned) sb->st_uid & 07777777);
+	sprintf(header.gid, "%o", (unsigned) sb->st_gid & 07777777);
 	sprintf(header.size, "%o", (unsigned)sb->st_size);
 	sprintf(header.mtime, "%llo", sb->st_mtime & 077777777777LL);
 	header.typeflag = type;
