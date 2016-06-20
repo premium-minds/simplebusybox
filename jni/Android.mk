@@ -26,7 +26,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/archival/libarchive/find_list_entry.c \
 	$(BUSYBOX_PATH)/archival/libarchive/decompress_unxz.c \
 	$(BUSYBOX_PATH)/archival/libarchive/decompress_uncompress.c \
-	$(BUSYBOX_PATH)/archival/libarchive/lzo1x_c.c \
 	$(BUSYBOX_PATH)/archival/libarchive/init_handle.c \
 	$(BUSYBOX_PATH)/archival/libarchive/seek_by_jump.c \
 	$(BUSYBOX_PATH)/archival/libarchive/header_list.c \
