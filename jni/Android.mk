@@ -189,6 +189,7 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/nuke_str.c \
 	$(BUSYBOX_PATH)/libbb/remove_file.c \
 	$(BUSYBOX_PATH)/libbb/platform.c \
+	$(BUSYBOX_PATH)/libbb/xatonum.c \
 	$(BUSYBOX_PATH)/libbb/read_printf.c \
 	$(BUSYBOX_PATH)/libbb/percent_decode.c \
 	$(BUSYBOX_PATH)/libbb/single_argv.c \
@@ -284,7 +285,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/herror_msg.c \
 	$(BUSYBOX_PATH)/libbb/safe_strncpy.c \
 	$(BUSYBOX_PATH)/libbb/xreadlink.c \
-	$(BUSYBOX_PATH)/libbb/xatonum_template.c \
 	$(BUSYBOX_PATH)/libbb/auto_string.c \
 	$(BUSYBOX_PATH)/libbb/sysconf.c \
 	$(BUSYBOX_PATH)/libbb/vdprintf.c \
