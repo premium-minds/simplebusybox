@@ -33,9 +33,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/archival/libarchive/header_verbose_list.c \
 	$(BUSYBOX_PATH)/archival/libarchive/get_header_ar.c \
 	$(BUSYBOX_PATH)/archival/libarchive/lzo1x_9x.c \
-	$(BUSYBOX_PATH)/archival/libarchive/unxz/xz_dec_stream.c \
-	$(BUSYBOX_PATH)/archival/libarchive/unxz/xz_dec_bcj.c \
-	$(BUSYBOX_PATH)/archival/libarchive/unxz/xz_dec_lzma2.c \
 	$(BUSYBOX_PATH)/archival/libarchive/data_skip.c \
 	$(BUSYBOX_PATH)/archival/libarchive/data_extract_to_stdout.c \
 	$(BUSYBOX_PATH)/archival/libarchive/get_header_tar_gz.c \
