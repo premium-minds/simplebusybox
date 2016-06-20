@@ -493,11 +493,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/shell/cttyhack.c \
 	$(BUSYBOX_PATH)/shell/ash.c \
 	$(BUSYBOX_PATH)/shell/match.c \
-	$(BUSYBOX_PATH)/sysklogd/klogd.c \
-	$(BUSYBOX_PATH)/sysklogd/logger.c \
-	$(BUSYBOX_PATH)/sysklogd/syslogd_and_logger.c \
-	$(BUSYBOX_PATH)/sysklogd/syslogd.c \
-	$(BUSYBOX_PATH)/sysklogd/logread.c \
 	$(BUSYBOX_PATH)/util-linux/blockdev.c \
 	$(BUSYBOX_PATH)/util-linux/uevent.c \
 	$(BUSYBOX_PATH)/util-linux/umount.c \
