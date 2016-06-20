@@ -593,8 +593,8 @@ handle_retr(void)
 		xlseek(local_file_fd, offset, SEEK_SET);
 
 	response = xasprintf(
-		" Opening BINARY connection for %s (%"OFF_FMT"u bytes)",
-		G.ftp_arg, statbuf.st_size);
+		" Opening BINARY connection for %s (%u bytes)",
+		G.ftp_arg, (unsigned)statbuf.st_size);
 	remote_fd = get_remote_transfer_fd(response);
 	free(response);
 	if (remote_fd < 0)
@@ -813,9 +813,10 @@ handle_size_or_mdtm(int need_size)
 		return;
 	}
 	if (need_size) {
-		sprintf(buf, STR(FTP_STATFILE_OK)" %"OFF_FMT"u\r\n", statbuf.st_size);
+		sprintf(buf, STR(FTP_STATFILE_OK)" %u\r\n", (unsigned)statbuf.st_size);
 	} else {
-		gmtime_r(&statbuf.st_mtime, &broken_out);
+		time_t st_t = statbuf.st_mtime;
+		gmtime_r(&st_t, &broken_out);
 		sprintf(buf, STR(FTP_STATFILE_OK)" %04u%02u%02u%02u%02u%02u\r\n",
 			broken_out.tm_year + 1900,
 			broken_out.tm_mon + 1,
