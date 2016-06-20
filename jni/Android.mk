@@ -90,7 +90,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/coreutils/shuf.c \
 	$(BUSYBOX_PATH)/coreutils/rmdir.c \
 	$(BUSYBOX_PATH)/coreutils/nice.c \
-	$(BUSYBOX_PATH)/coreutils/df.c \
 	$(BUSYBOX_PATH)/coreutils/whoami.c \
 	$(BUSYBOX_PATH)/coreutils/yes.c \
 	$(BUSYBOX_PATH)/coreutils/uuencode.c \
@@ -100,8 +99,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/coreutils/catv.c \
 	$(BUSYBOX_PATH)/coreutils/od.c \
 	$(BUSYBOX_PATH)/coreutils/chroot.c \
-	$(BUSYBOX_PATH)/coreutils/hostid.c \
-	$(BUSYBOX_PATH)/coreutils/logname.c \
 	$(BUSYBOX_PATH)/coreutils/mv.c \
 	$(BUSYBOX_PATH)/coreutils/usleep.c \
 	$(BUSYBOX_PATH)/coreutils/tty.c \
@@ -113,7 +110,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/coreutils/seq.c \
 	$(BUSYBOX_PATH)/coreutils/uname.c \
 	$(BUSYBOX_PATH)/coreutils/test_ptr_hack.c \
-	$(BUSYBOX_PATH)/coreutils/fsync.c \
 	$(BUSYBOX_PATH)/coreutils/stat.c \
 	$(BUSYBOX_PATH)/coreutils/tee.c \
 	$(BUSYBOX_PATH)/coreutils/uniq.c \
@@ -122,7 +118,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/coreutils/cut.c \
 	$(BUSYBOX_PATH)/coreutils/sum.c \
 	$(BUSYBOX_PATH)/coreutils/dirname.c \
-	$(BUSYBOX_PATH)/coreutils/date.c \
 	$(BUSYBOX_PATH)/coreutils/dos2unix.c \
 	$(BUSYBOX_PATH)/coreutils/sync.c \
 	$(BUSYBOX_PATH)/coreutils/true.c \
@@ -154,7 +149,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/e2fsprogs/tune2fs.c \
 	$(BUSYBOX_PATH)/e2fsprogs/lsattr.c \
 	$(BUSYBOX_PATH)/e2fsprogs/e2fs_lib.c \
-	$(BUSYBOX_PATH)/e2fsprogs/fsck.c \
 	$(BUSYBOX_PATH)/editors/vi.c \
 	$(BUSYBOX_PATH)/editors/patch_bbox.c \
 	$(BUSYBOX_PATH)/editors/cmp.c \
@@ -193,9 +187,7 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/chomp.c \
 	$(BUSYBOX_PATH)/libbb/nuke_str.c \
 	$(BUSYBOX_PATH)/libbb/remove_file.c \
-	$(BUSYBOX_PATH)/libbb/find_mount_point.c \
 	$(BUSYBOX_PATH)/libbb/platform.c \
-	$(BUSYBOX_PATH)/libbb/utmp.c \
 	$(BUSYBOX_PATH)/libbb/read_printf.c \
 	$(BUSYBOX_PATH)/libbb/percent_decode.c \
 	$(BUSYBOX_PATH)/libbb/single_argv.c \
@@ -483,7 +475,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/util-linux/uevent.c \
 	$(BUSYBOX_PATH)/util-linux/umount.c \
 	$(BUSYBOX_PATH)/util-linux/lsusb.c \
-	$(BUSYBOX_PATH)/util-linux/mkfs_reiser.c \
 	$(BUSYBOX_PATH)/util-linux/fbset.c \
 	$(BUSYBOX_PATH)/util-linux/lspci.c \
 	$(BUSYBOX_PATH)/util-linux/rev.c \
@@ -495,7 +486,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/util-linux/fstrim.c \
 	$(BUSYBOX_PATH)/util-linux/flock.c \
 	$(BUSYBOX_PATH)/util-linux/fdisk.c \
-	$(BUSYBOX_PATH)/util-linux/mkfs_vfat.c \
 	$(BUSYBOX_PATH)/util-linux/ipcrm.c \
 	$(BUSYBOX_PATH)/util-linux/hwclock.c \
 	$(BUSYBOX_PATH)/util-linux/mdev.c \
@@ -554,10 +544,7 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/util-linux/volume_id/f2fs.c \
 	$(BUSYBOX_PATH)/util-linux/more.c \
 	$(BUSYBOX_PATH)/util-linux/dmesg.c \
-	$(BUSYBOX_PATH)/util-linux/fsck_minix.c \
-	$(BUSYBOX_PATH)/util-linux/freeramdisk.c \
-	$(BUSYBOX_PATH)/util-linux/mkfs_minix.c \
-	$(BUSYBOX_PATH)/util-linux/mkfs_ext2.c
+	$(BUSYBOX_PATH)/util-linux/freeramdisk.c
 
 LOCAL_SRC_FILES := $(BUSYBOX_SRCS)
 LOCAL_C_INCLUDES:= busybox/include
