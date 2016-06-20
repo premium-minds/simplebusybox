@@ -357,32 +357,18 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/networking/httpd_ssi.c \
 	$(BUSYBOX_PATH)/networking/isrv.c \
 	$(BUSYBOX_PATH)/networking/ipcalc.c \
-	$(BUSYBOX_PATH)/networking/ether-wake.c \
 	$(BUSYBOX_PATH)/networking/traceroute.c \
 	$(BUSYBOX_PATH)/networking/route.c \
 	$(BUSYBOX_PATH)/networking/tunctl.c \
-	$(BUSYBOX_PATH)/networking/nameif.c \
 	$(BUSYBOX_PATH)/networking/netstat.c \
 	$(BUSYBOX_PATH)/networking/nc.c \
-	$(BUSYBOX_PATH)/networking/nslookup.c \
-	$(BUSYBOX_PATH)/networking/arping.c \
 	$(BUSYBOX_PATH)/networking/udhcp/socket.c \
 	$(BUSYBOX_PATH)/networking/udhcp/domain_codec.c \
-	$(BUSYBOX_PATH)/networking/udhcp/files.c \
-	$(BUSYBOX_PATH)/networking/udhcp/dhcprelay.c \
 	$(BUSYBOX_PATH)/networking/udhcp/dhcpc.c \
-	$(BUSYBOX_PATH)/networking/udhcp/d6_packet.c \
-	$(BUSYBOX_PATH)/networking/udhcp/static_leases.c \
 	$(BUSYBOX_PATH)/networking/udhcp/signalpipe.c \
-	$(BUSYBOX_PATH)/networking/udhcp/dhcpd.c \
-	$(BUSYBOX_PATH)/networking/udhcp/d6_socket.c \
-	$(BUSYBOX_PATH)/networking/udhcp/leases.c \
-	$(BUSYBOX_PATH)/networking/udhcp/dumpleases.c \
 	$(BUSYBOX_PATH)/networking/udhcp/packet.c \
 	$(BUSYBOX_PATH)/networking/udhcp/common.c \
-	$(BUSYBOX_PATH)/networking/udhcp/d6_dhcpc.c \
 	$(BUSYBOX_PATH)/networking/udhcp/arpping.c \
-	$(BUSYBOX_PATH)/networking/httpd_indexcgi.c \
 	$(BUSYBOX_PATH)/networking/brctl.c \
 	$(BUSYBOX_PATH)/networking/wget.c \
 	$(BUSYBOX_PATH)/procps/pmap.c \
@@ -397,7 +383,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/procps/free.c \
 	$(BUSYBOX_PATH)/procps/pidof.c \
 	$(BUSYBOX_PATH)/procps/nmeter.c \
-	$(BUSYBOX_PATH)/procps/pgrep.c \
 	$(BUSYBOX_PATH)/procps/iostat.c \
 	$(BUSYBOX_PATH)/procps/ps.c \
 	$(BUSYBOX_PATH)/procps/pstree.c \
