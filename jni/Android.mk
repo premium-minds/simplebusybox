@@ -499,32 +499,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/runit/chpst.c \
 	$(BUSYBOX_PATH)/runit/runsv.c \
 	$(BUSYBOX_PATH)/runit/svlogd.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/conf.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/images.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/expr.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/confdata.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/kxgettext.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/kconfig_load.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/symbol.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/gconf.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lxdialog/checklist.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lxdialog/inputbox.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lxdialog/menubox.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lxdialog/lxdialog.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lxdialog/yesno.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lxdialog/textbox.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lxdialog/util.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lxdialog/msgbox.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/menu.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/util.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/mconf.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/zconf.tab.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/lex.zconf.c \
-	$(BUSYBOX_PATH)/scripts/kconfig/zconf.hash.c \
-	$(BUSYBOX_PATH)/scripts/basic/fixdep.c \
-	$(BUSYBOX_PATH)/scripts/basic/docproc.c \
-	$(BUSYBOX_PATH)/scripts/basic/split-include.c \
-	$(BUSYBOX_PATH)/scripts/echo.c \
 	$(BUSYBOX_PATH)/selinux/setsebool.c \
 	$(BUSYBOX_PATH)/selinux/getenforce.c \
 	$(BUSYBOX_PATH)/selinux/matchpathcon.c \
