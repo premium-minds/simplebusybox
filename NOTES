@@ -27,7 +27,16 @@ Switched to using android-ndk-r10d instead of android-ndk-r8 because even
 at android-8 (froyo) it has a few more functions...
 
 
-XXX - make busybox build under JNI
+June 20, 2016.
+
+Had to update to android-9 (gingerbread 2.3) because a bunch of things
+needed sysinfo().  Last time I built busybox, I just disabled those
+things (like free(1)).  But it would be nice to have them.  And
+gingerbread happens to be a good benchmark for very old, anyways.  Any
+newer and we might as well jump straight to 4.x, because honeywhatever
+never saw much deployment.
+
+
 XXX - figure out how to add things that don't end in .so to the ant build (probably need a custom rule of some sort)
 XXX - figure out how to add symlinks or hardlinks to the apk
 XXX - make UI that just says "paste export PATH=$PATH:/data/app/blah/lib" or whatever
