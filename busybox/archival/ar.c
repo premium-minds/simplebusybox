@@ -95,9 +95,9 @@ static void output_ar_header(archive_handle_t *handle)
 	 */
 	enum {
 		/* for 2nd field: mtime */
-		MAX11CHARS = UINT_MAX > 0xffffffff ? (unsigned)99999999999 : UINT_MAX-1,
+		MAX11CHARS = UINT_MAX-1,
 		/* for last field: filesize */
-		MAX10CHARS = UINT_MAX > 0xffffffff ? (unsigned)9999999999 : UINT_MAX-1,
+		MAX10CHARS = UINT_MAX-1,
 	};
 
 	struct file_header_t *fh = handle->file_header;
