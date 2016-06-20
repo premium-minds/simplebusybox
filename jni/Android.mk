@@ -337,11 +337,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/loginutils/chpasswd.c \
 	$(BUSYBOX_PATH)/loginutils/deluser.c \
 	$(BUSYBOX_PATH)/loginutils/vlock.c \
-	$(BUSYBOX_PATH)/mailutils/sendmail.c \
-	$(BUSYBOX_PATH)/mailutils/popmaildir.c \
-	$(BUSYBOX_PATH)/mailutils/mail.c \
-	$(BUSYBOX_PATH)/mailutils/reformime.c \
-	$(BUSYBOX_PATH)/mailutils/makemime.c \
 	$(BUSYBOX_PATH)/miscutils/fbsplash.c \
 	$(BUSYBOX_PATH)/miscutils/mountpoint.c \
 	$(BUSYBOX_PATH)/miscutils/raidautorun.c \
