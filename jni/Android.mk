@@ -396,7 +396,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/runit/runsv.c \
 	$(BUSYBOX_PATH)/runit/svlogd.c \
 	$(BUSYBOX_PATH)/shell/random.c \
-	$(BUSYBOX_PATH)/shell/hush.c \
 	$(BUSYBOX_PATH)/shell/math.c \
 	$(BUSYBOX_PATH)/shell/shell_common.c \
 	$(BUSYBOX_PATH)/shell/ash_ptr_hack.c \
