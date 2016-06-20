@@ -8,7 +8,21 @@ It seems popular to add dropbear ssh client to packages such as this one,
 but to me that seems like a slippery slope...why add that and not rsync,
 for example?  I intend to limit to just busybox.
 
+...
+
+So, here's roughly how the files in jni/ were manually built.  I started
+with configs/android_ndk_defconfig, and customized that a bit, and had
+that in .config in a regular PC host build.  Then I run "make", and it
+generates the auto-generated .h files, and then I run:
+
+   cp include/applet_tables.h include/applets.h include/autoconf.h \
+   include/usage.h ~/src/simplebusybox/jni/; cp .config \
+   ~/src/simplebusybox/jni/config
+
+So that's where those files came from...
+
 
 XXX - make busybox build under JNI
-XXX - make UI that just says "paste export PATH=$PATH:/data/app/blah/lib" or whatever
 XXX - figure out how to add things that don't end in .so to the ant build (probably need a custom rule of some sort)
+XXX - figure out how to add symlinks or hardlinks to the apk
+XXX - make UI that just says "paste export PATH=$PATH:/data/app/blah/lib" or whatever
