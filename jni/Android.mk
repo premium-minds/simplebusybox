@@ -362,7 +362,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/networking/route.c \
 	$(BUSYBOX_PATH)/networking/tunctl.c \
 	$(BUSYBOX_PATH)/networking/nameif.c \
-	$(BUSYBOX_PATH)/networking/telnet.c \
 	$(BUSYBOX_PATH)/networking/netstat.c \
 	$(BUSYBOX_PATH)/networking/nc.c \
 	$(BUSYBOX_PATH)/networking/nslookup.c \
