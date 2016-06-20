@@ -2,7 +2,8 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
-LOCAL_CFLAGS    := -Wall -include autoconf.h
+LOCAL_CFLAGS    := -Wall -include autoconf.h \
+	-DBB_VER=\"1.24.2\" -DBB_BT=AUTOCONF_TIMESTAMP
 LOCAL_MODULE    := busybox
 
 BUSYBOX_PATH := ../busybox
