@@ -192,7 +192,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/copyfd.c \
 	$(BUSYBOX_PATH)/libbb/chomp.c \
 	$(BUSYBOX_PATH)/libbb/nuke_str.c \
-	$(BUSYBOX_PATH)/libbb/selinux_common.c \
 	$(BUSYBOX_PATH)/libbb/remove_file.c \
 	$(BUSYBOX_PATH)/libbb/find_mount_point.c \
 	$(BUSYBOX_PATH)/libbb/platform.c \
@@ -472,17 +471,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/runit/chpst.c \
 	$(BUSYBOX_PATH)/runit/runsv.c \
 	$(BUSYBOX_PATH)/runit/svlogd.c \
-	$(BUSYBOX_PATH)/selinux/setsebool.c \
-	$(BUSYBOX_PATH)/selinux/getenforce.c \
-	$(BUSYBOX_PATH)/selinux/matchpathcon.c \
-	$(BUSYBOX_PATH)/selinux/load_policy.c \
-	$(BUSYBOX_PATH)/selinux/sestatus.c \
-	$(BUSYBOX_PATH)/selinux/chcon.c \
-	$(BUSYBOX_PATH)/selinux/setfiles.c \
-	$(BUSYBOX_PATH)/selinux/runcon.c \
-	$(BUSYBOX_PATH)/selinux/selinuxenabled.c \
-	$(BUSYBOX_PATH)/selinux/getsebool.c \
-	$(BUSYBOX_PATH)/selinux/setenforce.c \
 	$(BUSYBOX_PATH)/shell/random.c \
 	$(BUSYBOX_PATH)/shell/hush.c \
 	$(BUSYBOX_PATH)/shell/math.c \
