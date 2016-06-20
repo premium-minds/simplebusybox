@@ -234,7 +234,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/str_tolower.c \
 	$(BUSYBOX_PATH)/libbb/getopt32.c \
 	$(BUSYBOX_PATH)/libbb/endofname.c \
-	$(BUSYBOX_PATH)/libbb/update_passwd.c \
 	$(BUSYBOX_PATH)/libbb/last_char_is.c \
 	$(BUSYBOX_PATH)/libbb/setup_environment.c \
 	$(BUSYBOX_PATH)/libbb/info_msg.c \
@@ -247,7 +246,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/inet_common.c \
 	$(BUSYBOX_PATH)/libbb/messages.c \
 	$(BUSYBOX_PATH)/libbb/fgets_str.c \
-	$(BUSYBOX_PATH)/libbb/hash_md5prime.c \
 	$(BUSYBOX_PATH)/libbb/vfork_daemon_rexec.c \
 	$(BUSYBOX_PATH)/libbb/get_cpu_count.c \
 	$(BUSYBOX_PATH)/libbb/fflush_stdout_and_exit.c \
@@ -259,7 +257,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/bb_askpass.c \
 	$(BUSYBOX_PATH)/libbb/dump.c \
 	$(BUSYBOX_PATH)/libbb/read.c \
-	$(BUSYBOX_PATH)/libbb/die_if_bad_username.c \
 	$(BUSYBOX_PATH)/libbb/write.c \
 	$(BUSYBOX_PATH)/libbb/skip_whitespace.c \
 	$(BUSYBOX_PATH)/libbb/procps.c \
@@ -291,37 +288,23 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/llist.c \
 	$(BUSYBOX_PATH)/libbb/getpty.c \
 	$(BUSYBOX_PATH)/libbb/bb_strtod.c \
-	$(BUSYBOX_PATH)/libbb/unicode.c \
 	$(BUSYBOX_PATH)/libbb/verror_msg.c \
 	$(BUSYBOX_PATH)/libbb/find_pid_by_name.c \
 	$(BUSYBOX_PATH)/libbb/strrstr.c \
 	$(BUSYBOX_PATH)/libpwdgrp/uidgid_get.c \
-	$(BUSYBOX_PATH)/libpwdgrp/pwd_grp.c \
 	$(BUSYBOX_PATH)/miscutils/fbsplash.c \
-	$(BUSYBOX_PATH)/miscutils/mountpoint.c \
 	$(BUSYBOX_PATH)/miscutils/raidautorun.c \
-	$(BUSYBOX_PATH)/miscutils/conspy.c \
-	$(BUSYBOX_PATH)/miscutils/readahead.c \
-	$(BUSYBOX_PATH)/miscutils/eject.c \
 	$(BUSYBOX_PATH)/miscutils/crontab.c \
 	$(BUSYBOX_PATH)/miscutils/dc.c \
 	$(BUSYBOX_PATH)/miscutils/ionice.c \
 	$(BUSYBOX_PATH)/miscutils/inotifyd.c \
-	$(BUSYBOX_PATH)/miscutils/adjtimex.c \
-	$(BUSYBOX_PATH)/miscutils/watchdog.c \
-	$(BUSYBOX_PATH)/miscutils/devfsd.c \
 	$(BUSYBOX_PATH)/miscutils/chat.c \
 	$(BUSYBOX_PATH)/miscutils/time.c \
-	$(BUSYBOX_PATH)/miscutils/i2c_tools.c \
-	$(BUSYBOX_PATH)/miscutils/runlevel.c \
 	$(BUSYBOX_PATH)/miscutils/volname.c \
 	$(BUSYBOX_PATH)/miscutils/flash_lock_unlock.c \
-	$(BUSYBOX_PATH)/miscutils/taskset.c \
 	$(BUSYBOX_PATH)/miscutils/makedevs.c \
 	$(BUSYBOX_PATH)/miscutils/ttysize.c \
-	$(BUSYBOX_PATH)/miscutils/last_fancy.c \
 	$(BUSYBOX_PATH)/miscutils/beep.c \
-	$(BUSYBOX_PATH)/miscutils/ubi_tools.c \
 	$(BUSYBOX_PATH)/miscutils/setsid.c \
 	$(BUSYBOX_PATH)/miscutils/chrt.c \
 	$(BUSYBOX_PATH)/miscutils/crond.c \
@@ -332,31 +315,16 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/miscutils/hdparm.c \
 	$(BUSYBOX_PATH)/miscutils/setserial.c \
 	$(BUSYBOX_PATH)/miscutils/strings.c \
-	$(BUSYBOX_PATH)/miscutils/rfkill.c \
-	$(BUSYBOX_PATH)/miscutils/mt.c \
-	$(BUSYBOX_PATH)/miscutils/bbconfig.c \
 	$(BUSYBOX_PATH)/miscutils/timeout.c \
-	$(BUSYBOX_PATH)/miscutils/last.c \
 	$(BUSYBOX_PATH)/miscutils/flashcp.c \
 	$(BUSYBOX_PATH)/miscutils/less.c \
-	$(BUSYBOX_PATH)/miscutils/flash_eraseall.c \
-	$(BUSYBOX_PATH)/miscutils/wall.c \
-	$(BUSYBOX_PATH)/miscutils/microcom.c \
-	$(BUSYBOX_PATH)/modutils/modprobe.c \
-	$(BUSYBOX_PATH)/modutils/depmod.c \
-	$(BUSYBOX_PATH)/modutils/lsmod.c \
 	$(BUSYBOX_PATH)/modutils/modinfo.c \
-	$(BUSYBOX_PATH)/modutils/insmod.c \
 	$(BUSYBOX_PATH)/modutils/modprobe-small.c \
-	$(BUSYBOX_PATH)/modutils/rmmod.c \
-	$(BUSYBOX_PATH)/modutils/modutils-24.c \
 	$(BUSYBOX_PATH)/modutils/modutils.c \
 	$(BUSYBOX_PATH)/networking/ip.c \
 	$(BUSYBOX_PATH)/networking/tcpudp_perhost.c \
 	$(BUSYBOX_PATH)/networking/httpd.c \
-	$(BUSYBOX_PATH)/networking/tc.c \
 	$(BUSYBOX_PATH)/networking/tcpudp.c \
-	$(BUSYBOX_PATH)/networking/ifplugd.c \
 	$(BUSYBOX_PATH)/networking/pscan.c \
 	$(BUSYBOX_PATH)/networking/whois.c \
 	$(BUSYBOX_PATH)/networking/ftpgetput.c \
@@ -366,7 +334,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/networking/isrv_identd.c \
 	$(BUSYBOX_PATH)/networking/slattach.c \
 	$(BUSYBOX_PATH)/networking/interface.c \
-	$(BUSYBOX_PATH)/networking/nc_bloaty.c \
 	$(BUSYBOX_PATH)/networking/libiproute/iptunnel.c \
 	$(BUSYBOX_PATH)/networking/libiproute/ll_map.c \
 	$(BUSYBOX_PATH)/networking/libiproute/ipaddress.c \
@@ -383,16 +350,11 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/networking/libiproute/iprule.c \
 	$(BUSYBOX_PATH)/networking/ftpd.c \
 	$(BUSYBOX_PATH)/networking/nbd-client.c \
-	$(BUSYBOX_PATH)/networking/ntpd.c \
-	$(BUSYBOX_PATH)/networking/ssl_helper/ssl_helper.c \
 	$(BUSYBOX_PATH)/networking/arp.c \
-	$(BUSYBOX_PATH)/networking/zcip.c \
 	$(BUSYBOX_PATH)/networking/dnsd.c \
-	$(BUSYBOX_PATH)/networking/ifenslave.c \
 	$(BUSYBOX_PATH)/networking/telnetd.c \
 	$(BUSYBOX_PATH)/networking/ifconfig.c \
 	$(BUSYBOX_PATH)/networking/ifupdown.c \
-	$(BUSYBOX_PATH)/networking/hostname.c \
 	$(BUSYBOX_PATH)/networking/httpd_ssi.c \
 	$(BUSYBOX_PATH)/networking/isrv.c \
 	$(BUSYBOX_PATH)/networking/ipcalc.c \
@@ -422,8 +384,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/networking/udhcp/common.c \
 	$(BUSYBOX_PATH)/networking/udhcp/d6_dhcpc.c \
 	$(BUSYBOX_PATH)/networking/udhcp/arpping.c \
-	$(BUSYBOX_PATH)/networking/inetd.c \
-	$(BUSYBOX_PATH)/networking/ssl_helper-wolfssl/ssl_helper.c \
 	$(BUSYBOX_PATH)/networking/httpd_indexcgi.c \
 	$(BUSYBOX_PATH)/networking/brctl.c \
 	$(BUSYBOX_PATH)/networking/wget.c \
