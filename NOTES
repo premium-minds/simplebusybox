@@ -16,8 +16,8 @@ that in .config in a regular PC host build.  Then I run "make", and it
 generates the auto-generated .h files, and then I run:
 
    cp include/applet_tables.h include/applets.h include/autoconf.h \
-   include/usage.h ~/src/simplebusybox/jni/; cp .config \
-   ~/src/simplebusybox/jni/config
+   include/usage.h include/usage_compressed.h ~/src/simplebusybox/jni/; \
+   cp .config ~/src/simplebusybox/jni/config
 
 So that's where those files came from...
 
