@@ -296,18 +296,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/libbb/strrstr.c \
 	$(BUSYBOX_PATH)/libpwdgrp/uidgid_get.c \
 	$(BUSYBOX_PATH)/libpwdgrp/pwd_grp.c \
-	$(BUSYBOX_PATH)/loginutils/sulogin.c \
-	$(BUSYBOX_PATH)/loginutils/su.c \
-	$(BUSYBOX_PATH)/loginutils/login.c \
-	$(BUSYBOX_PATH)/loginutils/adduser.c \
-	$(BUSYBOX_PATH)/loginutils/cryptpw.c \
-	$(BUSYBOX_PATH)/loginutils/add-remove-shell.c \
-	$(BUSYBOX_PATH)/loginutils/getty.c \
-	$(BUSYBOX_PATH)/loginutils/passwd.c \
-	$(BUSYBOX_PATH)/loginutils/addgroup.c \
-	$(BUSYBOX_PATH)/loginutils/chpasswd.c \
-	$(BUSYBOX_PATH)/loginutils/deluser.c \
-	$(BUSYBOX_PATH)/loginutils/vlock.c \
 	$(BUSYBOX_PATH)/miscutils/fbsplash.c \
 	$(BUSYBOX_PATH)/miscutils/mountpoint.c \
 	$(BUSYBOX_PATH)/miscutils/raidautorun.c \
