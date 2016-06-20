@@ -7,10 +7,7 @@ LOCAL_MODULE    := busybox
 
 BUSYBOX_PATH := ../busybox
 BUSYBOX_SRCS := \
-	$(BUSYBOX_PATH)/applets/usage_pod.c \
-	$(BUSYBOX_PATH)/applets/usage.c \
 	$(BUSYBOX_PATH)/applets/applets.c \
-	$(BUSYBOX_PATH)/applets/individual.c \
 	$(BUSYBOX_PATH)/archival/dpkg.c \
 	$(BUSYBOX_PATH)/archival/unzip.c \
 	$(BUSYBOX_PATH)/archival/rpm2cpio.c \
