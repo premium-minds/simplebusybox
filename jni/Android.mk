@@ -20,7 +20,6 @@ BUSYBOX_SRCS := \
 	$(BUSYBOX_PATH)/archival/ar.c \
 	$(BUSYBOX_PATH)/archival/dpkg_deb.c \
 	$(BUSYBOX_PATH)/archival/libarchive/header_skip.c \
-	$(BUSYBOX_PATH)/archival/libarchive/data_extract_to_command.c \
 	$(BUSYBOX_PATH)/archival/libarchive/unsafe_prefix.c \
 	$(BUSYBOX_PATH)/archival/libarchive/filter_accept_list_reassign.c \
 	$(BUSYBOX_PATH)/archival/libarchive/filter_accept_reject_list.c \
