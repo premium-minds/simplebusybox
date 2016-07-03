@@ -459,3 +459,10 @@ LOCAL_C_INCLUDES:= busybox/include
 LOCAL_LDFLAGS   := -static
 
 include $(BUILD_EXECUTABLE)
+
+
+include $(CLEAR_VARS)
+LOCAL_MODULE    := sbb-jni
+LOCAL_SRC_FILES := sbb.c
+LOCAL_CFLAGS    := -Wall
+include $(BUILD_SHARED_LIBRARY)

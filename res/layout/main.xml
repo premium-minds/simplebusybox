@@ -4,10 +4,14 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="Hello World, SimpleBusyBox"
-    />
+    <TextView android:id="@+id/status"
+	android:layout_width="fill_parent"
+	android:layout_height="1dp"
+	android:layout_weight="1"
+	android:text="status" />
+    <Button android:id="@+id/install"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:text="Install"
+	android:onClick="install_clicked" />
 </LinearLayout>
-
