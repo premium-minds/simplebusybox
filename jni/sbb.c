@@ -202,11 +202,25 @@ write_busybox(char *fn, jobject is)
 	return 1;
 }
 
+/* use the busybox --install command to make the links for us */
 static int
 make_links(char *path)
 {
-	/* XXX - run busybox --make-links or whatever? */
-	return 0;
+	char *fn = busybox_fn(path);
+	char *cmd = malloc(strlen(fn)*2+100);
+	int i;
+	sprintf(cmd, "\"%s\" --install -s \"%s\"", fn, path);
+	i = system(cmd);
+	if (i < 0) {
+		char *err = strerror(errno);
+		char *buf = malloc(strlen(fn) + 100);
+		sprintf(buf, "failed to open '%s': %s", fn, err);
+		update_status(buf);
+	} else if (i > 0) {
+		char buf[100];
+		sprintf(buf, "busybox --install returned %d\n", i);
+	}
+	return (i == 0);
 }
 
 static int
