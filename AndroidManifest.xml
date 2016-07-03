@@ -3,7 +3,7 @@
       package="org.galexander.busybox"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="11" />
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="11" />
     <application android:label="SimpleBusyBox" android:icon="@drawable/icon">
         <activity android:name="SimpleBusyBox" android:label="SimpleBusyBox">
             <intent-filter>
