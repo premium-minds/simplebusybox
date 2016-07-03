@@ -3,7 +3,6 @@ package org.galexander.busybox;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import java.io.File;
 
@@ -11,13 +10,11 @@ import java.io.File;
 public class SimpleBusyBox extends Activity
 {
 	private TextView status_text = null;
-	private TextView install_button = null;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		status_text = (TextView)findViewById(R.id.status);
-		install_button = (Button)findViewById(R.id.install);
 	}
 
 	public void onResume() {
