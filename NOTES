@@ -37,6 +37,35 @@ newer and we might as well jump straight to 4.x, because honeywhatever
 never saw much deployment.
 
 
-XXX - figure out how to add things that don't end in .so to the ant build (probably need a custom rule of some sort)
-XXX - figure out how to add symlinks or hardlinks to the apk
-XXX - make UI that just says "paste export PATH=$PATH:/data/app/blah/lib" or whatever
+July 3, 2016.
+
+I managed to build busybox, and now it is time to package it up.  I
+thought I would be able to hack ant to include the "busybox" binary and
+symlinks into the apk file, so that it would show up in something like
+/data/app/org.galexander.busybox/lib/arm/ and I could just add that to my
+PATH.  This would avoid the hack I used in simplesshd where I renamed the
+sshd to libsshd.so so that apkbuilder would find it.  That would not
+suffice because we can't very well have the user typing "libless.so"
+instead of "less".
+
+But it is not ant - ant just runs apkbuilder.  apkbuilder is some mess of
+java.  apkbuilder sucks.  I'm not about to hack the java of apkbuilder.
+And I'm not super inclined to dodge it and use infozip directly to create
+my apk.
+
+How did Burrows Busybox do it?  Well, first off, the PATH is:
+
+   /data/data/burrows.apps.busybox/app_busybox
+
+And second off, unpacking the APK doesn't seem to reveal the busybox.  So
+presumably it fetches it from somewhere and then extracts it into its
+data directory, and I guess that it is legit to chmod your own data
+directory to be world-readable?
+
+So I propose packaging it as a raw resource, and then having the Activity
+unpack it.
+
+
+
+XXX - make UI that unpacks into /data/data, then tells user where to find
+it "paste export PATH=$PATH:/data/app/blah/lib" or whatever
