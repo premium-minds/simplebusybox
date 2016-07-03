@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import java.io.File;
+import java.io.InputStream;
 
 
 public class SimpleBusyBox extends Activity
@@ -19,12 +19,38 @@ public class SimpleBusyBox extends Activity
 
 	public void onResume() {
 		super.onResume();
-		(new Thread() { public void run() {
-			determine_status(getFilesDir().toString());
-		} }).start();
+		check_status();
 	}
 
 	public void install_clicked(View v) {
+		(new Thread() { public void run() {
+			do_install();
+		} }).start();
+	}
+
+	private void do_install() {
+		try {
+			InputStream is = getResources().openRawResource(R.raw.busybox);
+			if (is == null) {
+				update_status("Error opening busybox resource.");
+			} else {
+				try {
+					native_install(getFilesDir().toString(),
+							is);
+				} finally {
+					is.close();
+				}
+			}
+		} catch (Exception e) {
+			update_status("Exception while unpacking: " +
+						e.getMessage());
+		}
+	}
+
+	private void check_status() {
+		(new Thread() { public void run() {
+			determine_status(getFilesDir().toString());
+		} }).start();
 	}
 
 	private void update_status(final String s) {
@@ -47,6 +73,7 @@ public class SimpleBusyBox extends Activity
 
 
 	private native void determine_status(String path);
+	private native void native_install(String path, InputStream is);
 	static {
 		System.loadLibrary("sbb-jni");
 	}
