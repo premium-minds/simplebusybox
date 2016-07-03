@@ -68,7 +68,7 @@ static void
 update_status(jobject this, char *s)
 {
 	jstring *x = (*env)->NewStringUTF(env, s);
-	if (x) return;
+	if (!x) return;
 	(*env)->CallVoidMethod(env, this, mid_sbb_update_status, x);
 	(*env)->DeleteLocalRef(env, x);
 }
