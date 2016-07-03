@@ -1,7 +1,10 @@
 #include <jni.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 static JNIEnv *env;
 
@@ -12,6 +15,7 @@ static jclass cl_simplebusybox;
 
 static jmethodID mid_println;
 static jmethodID mid_sbb_update_status;
+static jmethodID mid_sbb_get_version;
 
 static jfieldID fid_out;
 
@@ -40,9 +44,9 @@ jni_init(JNIEnv *env_)
 	METHOD(println, printstream, "println", "(Ljava/lang/String;)V")
 	METHOD(sbb_update_status, simplebusybox, "update_status",
 			"(Ljava/lang/String;)V")
+	METHOD(sbb_get_version, simplebusybox, "get_version", "()I")
 
 	STFIELD(out, system, "out", "Ljava/io/PrintStream;")
-/* XXX FIELD(st_cents, strobe, "cents", "I") */
 
 	return 1;
 }
@@ -84,15 +88,77 @@ string_from_java(jstring s)
 	return ret;
 }
 
+static char *
+busybox_fn(char *p)
+{
+	int len = strlen(p);
+	char *ret = malloc(len+40);
+	sprintf(ret, "%s/busybox", p);
+	return ret;
+}
+
+static char *
+busybox_verfn(char *p)
+{
+	int len = strlen(p);
+	char *ret = malloc(len+40);
+	sprintf(ret, "%s/busybox_version", p);
+	return ret;
+}
+
+static int
+check_present(char *p)
+{
+	return (access(busybox_fn(p), R_OK|X_OK) == 0);
+}
+
+static int
+check_version(char *p, int expected)
+{
+	int fd;
+	char buf[100];
+	int i;
+
+	fd = open(busybox_verfn(p), O_RDONLY);
+	if (fd < 0) {
+		return 0;
+	}
+	i = read(fd, buf, (sizeof buf)-1);
+	close(fd);
+	if (i <= 0) {
+		return 0;
+	}
+	buf[i] = 0;
+	return (strtoul(buf, NULL, 10) == expected);
+}
+
 JNIEXPORT void JNICALL
 Java_org_galexander_busybox_SimpleBusyBox_determine_1status(JNIEnv *env_,
 		jobject this, jstring path)
 {
 	char *p;
+	int ver;
 
 	if (!jni_init(env_)) {
 		return;
 	}
+
 	p = string_from_java(path);
-	update_status(this, p);
+	ver = (*env)->CallIntMethod(env, this, mid_sbb_get_version);
+	if (!check_present(p)) {
+		update_status(this, "Not unpacked.");
+	} else if (!check_version(p, ver)) {
+		update_status(this, "Wrong version is unpacked.");
+	} else {
+		char *buf = malloc(strlen(p)+100);
+		sprintf(buf, "Has been unpacked into:\n%s", p);
+		update_status(this, buf);
+	}
+/* XXX
+	if (chmod(p, 00755)) {
+		update_status(this, "chmod error");
+	} else {
+		update_status(this, "succ");
+	}
+*/
 }

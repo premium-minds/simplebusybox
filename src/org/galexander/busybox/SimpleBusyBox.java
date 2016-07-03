@@ -30,7 +30,7 @@ public class SimpleBusyBox extends Activity
 	public void install_clicked(View v) {
 	}
 
-	public void update_status(final String s) {
+	private void update_status(final String s) {
 		runOnUiThread(new Runnable() { public void run() {
 			if (status_text != null) {
 				status_text.setText(s);
@@ -38,8 +38,18 @@ public class SimpleBusyBox extends Activity
 		} });
 	}
 
-	private native void determine_status(String path);
+	private int get_version() {
+		int ret = 0;
+		try {
+			ret = getPackageManager()
+				.getPackageInfo(getPackageName(), 0)
+				.versionCode;
+		} catch (Exception e) { }
+		return ret;
+	}
 
+
+	private native void determine_status(String path);
 	static {
 		System.loadLibrary("sbb-jni");
 	}
