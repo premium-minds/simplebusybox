@@ -39,7 +39,7 @@ jni_init(JNIEnv *env_)
 
 	METHOD(println, printstream, "println", "(Ljava/lang/String;)V")
 	METHOD(sbb_update_status, simplebusybox, "update_status",
-			"(Ljava/lang/String)V")
+			"(Ljava/lang/String;)V")
 
 	STFIELD(out, system, "out", "Ljava/io/PrintStream;")
 /* XXX FIELD(st_cents, strobe, "cents", "I") */
