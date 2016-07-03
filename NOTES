@@ -65,7 +65,25 @@ directory to be world-readable?
 So I propose packaging it as a raw resource, and then having the Activity
 unpack it.
 
+...
 
+And that works!  I can even use busybox --install -s to make the symlinks!
+Nice!
 
+Now I just need to make some UI up and then I'm set!
+
+XXX - make a separate status display that is a textview you can select from
+        <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=""
+    android:id="@+id/pwTextView"
+ -   android:enabled="true"
+ -   android:textIsSelectable="true"
+ -   android:focusable="true"
+ -   android:longClickable="true" />
+XXX - infrastructure to enable the second status region
+XXX - make sure when you first start it you are drawn to clicking Unpack
+XXX - menu: Copy PATH, help (http), about
 XXX - make UI that unpacks into /data/data, then tells user where to find
 it "paste export PATH=$PATH:/data/app/blah/lib" or whatever
