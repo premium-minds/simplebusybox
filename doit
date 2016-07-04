@@ -1,0 +1,8 @@
+#!/bin/sh
+
+[ ! -d res/raw ] && mkdir res/raw
+
+ndk-build -j8 &&
+mv obj/local/armeabi/busybox res/raw/busybox &&
+ant debug &&
+mrinst bin/SimpleBusyBox-debug.apk
