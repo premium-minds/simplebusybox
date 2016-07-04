@@ -248,6 +248,7 @@ write_version(char *fn, int ver)
 	sprintf(buf, "%d\n", ver);
 	do_write(fd, buf, strlen(buf));
 	close(fd);
+	chmod(fn, 00644);
 	return 1;
 }
 
