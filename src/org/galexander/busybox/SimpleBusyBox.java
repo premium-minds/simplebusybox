@@ -10,11 +10,13 @@ import java.io.InputStream;
 public class SimpleBusyBox extends Activity
 {
 	private TextView status_text = null;
+	private TextView pastable_text = null;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		status_text = (TextView)findViewById(R.id.status);
+		pastable_text = (TextView)findViewById(R.id.pastable);
 	}
 
 	public void onResume() {
@@ -60,8 +62,20 @@ public class SimpleBusyBox extends Activity
 		} });
 	}
 
+	private void display_path() {
+		runOnUiThread(new Runnable() { public void run() {
+			if (pastable_text != null) {
+				pastable_text.setText(path_text());
+			}
+		} });
+	}
+
 	private String get_path() {
 		return getFilesDir().toString();
+	}
+
+	private String path_text() {
+		return "export PATH="+get_path()+":$PATH";
 	}
 
 	private int get_version() {

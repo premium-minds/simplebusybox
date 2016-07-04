@@ -19,6 +19,7 @@ static jclass cl_inputstream;
 static jmethodID mid_println;
 static jmethodID mid_is_read;
 static jmethodID mid_sbb_update_status;
+static jmethodID mid_sbb_display_path;
 static jmethodID mid_sbb_get_version;
 
 static jfieldID fid_out;
@@ -51,6 +52,7 @@ jni_init(JNIEnv *env_, jobject this)
 	METHOD(is_read, inputstream, "read", "([B)I")
 	METHOD(sbb_update_status, simplebusybox, "update_status",
 			"(Ljava/lang/String;)V")
+	METHOD(sbb_display_path, simplebusybox, "display_path", "()V");
 	METHOD(sbb_get_version, simplebusybox, "get_version", "()I")
 
 	STFIELD(out, system, "out", "Ljava/io/PrintStream;")
@@ -82,6 +84,12 @@ update_status(char *s)
 	if (!x) return;
 	(*env)->CallVoidMethod(env, curr_sbb, mid_sbb_update_status, x);
 	(*env)->DeleteLocalRef(env, x);
+}
+
+static void
+display_path(void)
+{
+	(*env)->CallVoidMethod(env, curr_sbb, mid_sbb_display_path);
 }
 
 static int
@@ -260,8 +268,9 @@ Java_org_galexander_busybox_SimpleBusyBox_determine_1status(JNIEnv *env_,
 		update_status("Wrong version is unpacked.");
 	} else {
 		char *buf = malloc(strlen(p)+100);
-		sprintf(buf, "Has been unpacked into:\n%s", p);
+		sprintf(buf, "Already unpacked into:\n%s", p);
 		update_status(buf);
+		display_path();
 	}
 }
 
@@ -281,7 +290,9 @@ Java_org_galexander_busybox_SimpleBusyBox_native_1install(JNIEnv *env_,
 	if (write_busybox(busybox_fn(p), is) &&
 	    make_links(p) &&
 	    write_version(busybox_verfn(p), get_version())) {
-		/* XXX - provide path etc */
-		update_status("success");
+		char *buf = malloc(strlen(p) + 100);
+		sprintf(buf, "Unpacked busybox into:\n%s", p);
+		update_status(buf);
+		display_path();
 	}
 }

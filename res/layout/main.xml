@@ -8,10 +8,18 @@
 	android:layout_width="fill_parent"
 	android:layout_height="1dp"
 	android:layout_weight="1"
+	android:textSize="22sp"
 	android:text="status" />
+    <EditText android:id="@+id/pastable"
+	android:layout_width="fill_parent"
+	android:layout_height="1dp"
+	android:layout_weight="1"
+	android:textSize="22sp"
+	android:text="" />
     <Button android:id="@+id/install"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
-	android:text="Install"
+	android:text="Unpack"
+	android:textSize="32sp"
 	android:onClick="install_clicked" />
 </LinearLayout>
