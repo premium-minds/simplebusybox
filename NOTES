@@ -72,4 +72,7 @@ Nice!
 
 Now I just need to make some UI up and then I'm set!
 
-XXX - get rid of busybox commands: reboot, poweroff, halt
+...
+
+And there it is!  Completely done.  Just need Sarah to re-touch the
+graphic assets and then I'll build it for release.
