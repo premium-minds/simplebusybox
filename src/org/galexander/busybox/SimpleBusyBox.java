@@ -35,8 +35,7 @@ public class SimpleBusyBox extends Activity
 				update_status("Error opening busybox resource.");
 			} else {
 				try {
-					native_install(getFilesDir().toString(),
-							is);
+					native_install(get_path(), is);
 				} finally {
 					is.close();
 				}
@@ -49,7 +48,7 @@ public class SimpleBusyBox extends Activity
 
 	private void check_status() {
 		(new Thread() { public void run() {
-			determine_status(getFilesDir().toString());
+			determine_status(get_path());
 		} }).start();
 	}
 
@@ -59,6 +58,10 @@ public class SimpleBusyBox extends Activity
 				status_text.setText(s);
 			}
 		} });
+	}
+
+	private String get_path() {
+		return getFilesDir().toString();
 	}
 
 	private int get_version() {
