@@ -1,7 +1,15 @@
 package org.galexander.busybox;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.ClipboardManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import java.io.InputStream;
@@ -22,6 +30,55 @@ public class SimpleBusyBox extends Activity
 	public void onResume() {
 		super.onResume();
 		check_status();
+	}
+
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main_menu, menu);
+		return true;
+	}
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.copy:
+				copy_path();
+				return true;
+			case R.id.doc: {
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(Uri.parse(
+"http://www.galexander.org/software/simplebusybox"));
+				startActivity(i);
+			}	return true;
+			case R.id.about: {
+				about_dialog();
+			}	return true;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+	}
+
+	public void copy_path() {
+		ClipboardManager cl = (ClipboardManager)
+			getSystemService(Context.CLIPBOARD_SERVICE);
+		if (cl == null) {
+			return;
+		}
+		cl.setText(path_text());
+	}
+
+	public void about_dialog() {
+		AlertDialog.Builder b =
+			new AlertDialog.Builder(this);
+		b.setCancelable(true);
+		b.setPositiveButton("OK",
+			new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface di, int which) {
+			} });
+		b.setIcon(android.R.drawable.ic_dialog_info);
+		b.setTitle("About");
+		b.setMessage(
+			"SimpleBusyBox version " + get_version_str() +
+			"\nBusyBox version 1.24.2");
+		b.show();
 	}
 
 	public void install_clicked(View v) {
@@ -84,6 +141,16 @@ public class SimpleBusyBox extends Activity
 			ret = getPackageManager()
 				.getPackageInfo(getPackageName(), 0)
 				.versionCode;
+		} catch (Exception e) { }
+		return ret;
+	}
+
+	private String get_version_str() {
+		String ret = "";
+		try {
+			ret = getPackageManager()
+				.getPackageInfo(getPackageName(), 0)
+				.versionName;
 		} catch (Exception e) { }
 		return ret;
 	}
