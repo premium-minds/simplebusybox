@@ -15,7 +15,7 @@
 	android:layout_height="1dp"
 	android:layout_weight="1"
 	android:textSize="22sp"
-	android:text="" />
+	android:text="Click &quot;Unpack&quot; below to unpack and install BusyBox." />
     <Button android:id="@+id/install"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"

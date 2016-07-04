@@ -73,7 +73,6 @@ Nice!
 Now I just need to make some UI up and then I'm set!
 
 XXX - get rid of busybox commands: reboot, poweroff, halt
-XXX - make sure when you first start it you are drawn to clicking Unpack
 XXX - menu: Copy PATH, help (http), about
 XXX - make UI that unpacks into /data/data, then tells user where to find
 it "paste export PATH=$PATH:/data/app/blah/lib" or whatever
