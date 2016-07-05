@@ -1,0 +1,5 @@
+convert -scale 48x48 icon512x512.png -set colorspace RGB res/drawable/icon.png
+convert -scale 96x96 icon512x512.png -set colorspace RGB res/drawable-xhdpi/icon.png
+convert -scale 72x72 icon512x512.png -set colorspace RGB res/drawable-hdpi/icon.png
+convert -scale 144x144 icon512x512.png -set colorspace RGB res/drawable-xxhdpi/icon.png
+convert -scale 256x256 icon512x512.png -set colorspace RGB doc/icon.png
