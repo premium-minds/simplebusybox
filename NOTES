@@ -78,4 +78,19 @@ And there it is!  Completely done.  Just need Sarah to re-touch the
 graphic assets and then I'll build it for release.
 
 
+July 9, 2016.
+
+So...I released 1.0, and then immediately found out hostname lookup
+doesn't work, which is a bummer because busybox includes pidgin nc and
+wget.  Tracking it down, it looks like a bare call to getaddrinfo()
+doesn't work, returns 7, EAI_NODATA, "No address associated with
+hostname", which seems to say lookup worked but the address was bad,
+which is wrong.
+
+However, the native /system/bin/ping is able to do the resolution
+alright.  I was looking at ping, trying to see if it called the same
+libc, and it does not!  I was using -static to build busybox, and without
+it, DNS resolution seems to work!
+
+
 XXX - figure out name resolution
