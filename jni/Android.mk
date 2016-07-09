@@ -456,7 +456,7 @@ BUSYBOX_SRCS := \
 LOCAL_SRC_FILES := $(BUSYBOX_SRCS)
 LOCAL_C_INCLUDES:= busybox/include
 # LOCAL_LDLIBS    := -lz
-LOCAL_LDFLAGS   := -static
+# LOCAL_LDFLAGS   := -static
 
 include $(BUILD_EXECUTABLE)
 

@@ -92,5 +92,13 @@ alright.  I was looking at ping, trying to see if it called the same
 libc, and it does not!  I was using -static to build busybox, and without
 it, DNS resolution seems to work!
 
+Bah, that was against platform android-19.  If I link against android-10,
+then without -static I get
+   error: only position independent executables (PIE) are supported.
+Which is, I recall, why I added the -static in the first place.
 
-XXX - figure out name resolution
+They really fucked us here, apparently.  Support for PIE was added at 4.1
+(android-16), and then mandated by 5.0 (android-21).  So really, I need
+to bump up to android-16.  Bah humbug.  But I guess I don't care, because
+I don't need busybox for anything old I have sitting around.  And
+anyways, even my Nexus 7 shipped with 4.1.
