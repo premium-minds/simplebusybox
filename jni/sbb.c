@@ -202,9 +202,8 @@ write_busybox(char *fn, jobject is)
 		(*env)->ReleaseByteArrayElements(env, buf, t, JNI_ABORT);
 	}
 
+	fchmod(fd, 00755);
 	close(fd);
-
-	chmod(fn, 00755);	/* in case umask overrode the O_CREAT mode */
 
 	(*env)->DeleteLocalRef(env, buf);
 	return 1;
@@ -247,9 +246,22 @@ write_version(char *fn, int ver)
 	}
 	sprintf(buf, "%d\n", ver);
 	do_write(fd, buf, strlen(buf));
+	fchmod(fd, 00644);
 	close(fd);
-	chmod(fn, 00644);
 	return 1;
+}
+
+/* chmod 755 the directory itself, so the user can do an ls */
+static int
+share_directory(char *fn)
+{
+	/* NB - Oreo seems to prefer fchmod() to chmod() */
+	int fd = open(fn, O_RDONLY);
+	if (fd >= 0) {
+		fchmod(fd, 00755);
+		close(fd);
+	}
+	return 1;		/* always pretend to succeed */
 }
 
 JNIEXPORT void JNICALL
@@ -290,7 +302,8 @@ Java_org_galexander_busybox_SimpleBusyBox_native_1install(JNIEnv *env_,
 
 	if (write_busybox(busybox_fn(p), is) &&
 	    make_links(p) &&
-	    write_version(busybox_verfn(p), get_version())) {
+	    write_version(busybox_verfn(p), get_version()) &&
+	    share_directory(p)) {
 		char *buf = malloc(strlen(p) + 100);
 		sprintf(buf, "Unpacked busybox into:\n%s", p);
 		update_status(buf);
